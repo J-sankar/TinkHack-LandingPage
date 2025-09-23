@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&family=Bebas+Neue&family=Bitcount+Grid+Double+Ink:wght@100..900&family=Boldonse&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:wdth@62.5..100&display=swap');
+*{
+   margin: 0;
+   padding: 0; 
+   box-sizing: border-box;
+}
+
+body {
+   background: linear-gradient(-45deg, #0f2027, #1d282c, #2c5364, #0f171c);
+    
+  background-size: 400% 400%;
+  animation: gradientBG 5s ease infinite;
+  /* dark blues/teals, smooth transition */
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  
+}
+
+@keyframes gradientBG {
+  0% { 
+    background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#preloader {
+  position: fixed;
+  font-family:'Bitcount Grid Double Ink';
+  font-size: 100px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0f2027; /* dark background */
+  display: flex;
+  color: aliceblue;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 3s ease;
+  
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #881d84;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 3s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { 
+    border-top: 6px solid #210b21;
+    transform: rotate(360deg); }
+}
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem;
+  /* background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); */
+  color: white;
+  
+}
+
+.btn {
+  background: #701175;
+  color: rgb(255, 255, 255);
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  text-decoration: none;
+  font-weight: bold;
+  transform: scale(1);
+  transition: all 0.2s ease , background 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.btn:hover {
+
+  background: #671147;
+  transform: scale(1.1);
+}
+
+.contents {
+    
+    
+    opacity: 0;
+    transition: opacity  1s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.contents.show {
+  opacity: 1;
+}
+.contents section, header{
+    
+    border: none;
+    width: 80%;
+   opacity: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
