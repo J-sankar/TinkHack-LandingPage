@@ -6,23 +6,42 @@
 }
 
 body {
-   background: linear-gradient(-45deg, #0f2027, #1d282c, #2c5364, #0f171c);
-    
-  background-size: 400% 400%;
-  animation: gradientBG 5s ease infinite;
-  /* dark blues/teals, smooth transition */
-  min-height: 100vh;
-  overflow-x: hidden;
-  font-family: 'Inter', sans-serif;
-  
+  background:  #121212;;
+  color: white;
+   overflow-x: hidden
 }
 
-@keyframes gradientBG {
-  0% { 
-    background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+nav {
+  display: flex;
+  justify-content: space-between; /* logo left, icons right */
+  align-items: center;           /* vertical alignment */
+  height: 10vh;
+  width: 100%;
+  padding: 0 2rem;               /* space on left/right */
+  background-color: #121212;     /* dark background */
 }
+
+nav .logo img {
+  height: 60px;                  /* adjust logo size */
+}
+
+nav .nav-icons {
+  display: flex;
+  gap: 1rem;                     /* space between icons */
+}
+
+nav .nav-icons img {
+  height: 40px;                  /* adjust icon size */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+nav .nav-icons img:hover {
+  transform: scale(1.1);         /* simple hover effect */
+}
+
+
+
 
 #preloader {
   position: fixed;
@@ -63,16 +82,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap:20px;
   padding: 3rem;
-  /* background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); */
-  color: white;
+ 
+  margin-top: 5px;
   
 }
 
 .btn {
-  background: #701175;
+  background: #3366FF;
   color: rgb(255, 255, 255);
-  padding: 0.8rem 1.5rem;
+  width: 40%;
+  padding: 5px;
   border-radius: 8px;
   border: none;
   text-decoration: none;
@@ -84,7 +105,7 @@ body {
 
 .btn:hover {
 
-  background: #671147;
+  background: #224696;
   transform: scale(1.1);
 }
 
@@ -101,16 +122,115 @@ body {
 .contents.show {
   opacity: 1;
 }
-.contents section, header{
+.contents{
+
     
     border: none;
-    width: 80%;
+    
    opacity: none;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    
+    
+    
+    border: 2px solid black;
     
 }
 
+.hero {
+  position: relative;
+  height: 70vh;
+  width: 100vw;
+
+
+}
+
+.images-left , .images-right{
+  position: absolute;
+  
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+
+.images-left, .images-right {
+  position: absolute;
+  height: 30%;
+  display: flex;
+  flex-direction: column; /* stack images vertically */
+  align-items: center;
+  width: 30%;
+}
+
+.images-left {
+  left: 5%; /* distance from left */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.images-right {
+  right: 5%; /* distance from right */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Triangle effect for left images */
+.images-left .profile:nth-child(1) {
+  margin-top: 0;
+}
+.images-left .profile:nth-child(2) {
+  margin-top: 40px;
+}
+.images-left .profile:nth-child(3) {
+  margin-top: 80px;
+}
+
+/* Triangle effect for right images (reverse order) */
+.images-right .profile:nth-child(1) {
+  margin-top: 0;
+}
+.images-right .profile:nth-child(2) {
+  margin-top: 40px;
+}
+.images-right .profile:nth-child(3) {
+  margin-top: 80px;
+}
+
+/* Optional: slightly scale smaller images at top to enhance triangle look */
+.images-left .profile:nth-child(1),
+.images-right .profile:nth-child(1) {
+  transform: scale(0.9);
+}
+.images-left .profile:nth-child(2),
+.images-right .profile:nth-child(2) {
+  transform: scale(0.95);
+}
+.images-left .profile:nth-child(3),
+.images-right .profile:nth-child(3) {
+  transform: scale(1);
+}
+
+
+.main-content {
+  position: absolute;
+  /* left: 35%;
+    top: 38%;
+     position: absolute; */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* perfectly center horizontally and vertically */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center text horizontally */
+  gap: 10px; /* space between h1s */
+  text-align: center;
+
+}
+
+#overview{
+  background-color: rgb(37, 36, 36);
+  width: 70vw;
+  height: 50vh;
+  border-radius: 16px;
+}
