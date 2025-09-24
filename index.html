@@ -3,82 +3,121 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <link rel="stylesheet" href="styles.css" />
+
     <title>Document</title>
   </head>
   <body>
-    <div class="loadingscreen">
-    </div>
+    <div class="loadingscreen"></div>
     <div id="preloader">
-      
       <p>TinkHack 2025</p>
       <div class="loader"></div>
-</div>
-  <div class="contents">
-    
-    <header class="hero">
-      <div class="hero-content" >
-        <h1>TinkHack 2025</h1>
-        <p>Collaborate, innovate, and compete!</p>
-        <button class="btn">Register Here</button>
-      </div>
-      <div class="hero-image" >
-        <img src="images\html-system-website-concept.jpg" width="500px" height="300px" alt="Hackathon illustration" />
-      </div>
-    </header>
-    .
-    <section id="overview" >
-      <h2>Event Overview</h2>
-      <p>TinkHack is the flagship hackathon of TinkerHub MEC...</p>
-      <div class="features">
-        <div class="feature">
-          <img src="images/icon1.svg" alt="Workshops" />
-          <p>Workshops & Mentorship</p>
-        </div>
-        <div class="feature">
-          <img src="images/icon2.svg" alt="Prizes" />
-          <p>Exciting Prizes</p>
-        </div>
-      </div>
-    </section>
-    <section id="timeline" >
-      <h2>Timeline</h2>
-      <ul>
-        <li>Registration Opens – 1st Oct</li>
-        <li>Hackathon Starts – 10th Oct</li>
-        <li>Submission Deadline – 15th Oct</li>
-        <li>Winners Announced – 20th Oct</li>
-      </ul>
-    </section>
-    <section id="registration">
-      <h2>Register</h2>
-      <form id="registration-form">
-        <input type="text" name="name" placeholder="Name" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <input type="text" name="college" placeholder="College" required />
-        <button type="submit">Submit</button>
-      </form>
-    </section>
-    <section id="sponsors">
-      <h2>Sponsors</h2>
-      <div class="sponsor-grid">
-        <img src="images/sponsor1.png" alt="Sponsor 1" />
-        <img src="images/sponsor2.png" alt="Sponsor 2" />
-        <img src="images/sponsor3.png" alt="Sponsor 3" />
-      </div>
-    </section>
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: info@tinkhack.tech</p>
-      <!-- Optional: simple contact form -->
-    </section>
-    <footer>
-      <p>&copy; 2025 TinkHack | TinkerHub MEC</p>
-    </footer>
+    </div>
+  <nav>
+  <div class="logo">
+    <img src="logo.png" alt="TinkHack Logo" />
   </div>
+  <div class="nav-icons">
+    <img src="icon1.png" alt="Icon 1" />
+    <img src="icon2.png" alt="Icon 2" />
+  </div>
+</nav>
+
+    <div class="contents">
     
+      <section class="hero">
+        <div class="images-left">
+          <div class="profile" style="--x: 80px; --y: -70px">
+            <img src="person1.jpg" alt="Mentor" />
+            <span class="label mentor">MENTOR</span>
+          </div>
+          <div class="profile" style="--x: 80px; --y: -70px">
+            <img src="person2.jpg" alt="Designer" />
+            <span class="label design">DESIGN</span>
+          </div>
+          <div class="profile2">
+            <img src="person2.jpg" alt="Designer" style="--x: 80px; --y: -70px" />
+            <span class="label design">DESIGN</span>
+          </div>
+        </div>
+
+        <div class="main-content">
+          <h1 style="text-align: center;">THE FLAGSHIP EVENT<span style="background-color: gray ; font-size: small ; padding: 5PX; margin-left: 5px;">2 Oct - 3 Oct</span></h1><h1> DESIGN HACKATHON</h1>
+          <button class="btn">REGISTER FOR THE HACK</button>
+        </div>
+
+        <div class="images-right">
+          <div class="profile" style="--x: 80px; --y: -70px">
+            <img src="person3.jpg" alt="Design" />
+            <span class="label design">DESIGN</span>
+          </div>
+          <div class="profile">
+            <img src="person4.jpg" alt="No-code" />
+            <span class="label no-code">NO-CODE</span>
+          </div>
+          <div class="profile2" style="--x: 50px; --y: 100px">
+            <img src="person4.jpg" alt="No-code" />
+            <span class="label no-code">NO-CODE</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="overview" data-aos="fade-left">
+        <h2>Event Overview</h2>
+        <p>TinkHack is the flagship hackathon of TinkerHub MEC...</p>
+        <div class="features">
+          <div class="feature">
+            <img src="images/icon1.svg" alt="Workshops" />
+            <p>Workshops & Mentorship</p>
+          </div>
+          <div class="feature">
+            <img src="images/icon2.svg" alt="Prizes" />
+            <p>Exciting Prizes</p>
+          </div>
+        </div>
+      </section>
+      <section id="timeline" data-aos="fade-left">
+        <h2>Timeline</h2>
+        <ul>
+          <li>Registration Opens – 1st Oct</li>
+          <li>Hackathon Starts – 10th Oct</li>
+          <li>Submission Deadline – 15th Oct</li>
+          <li>Winners Announced – 20th Oct</li>
+        </ul>
+      </section>
+      <section id="registration" data-aos="fade-left">
+        <h2>Register</h2>
+        <form id="registration-form">
+          <input type="text" name="name" placeholder="Name" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <input type="text" name="college" placeholder="College" required />
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+      <section id="sponsors" data-aos="fade-left">
+        <h2>Sponsors</h2>
+        <div class="sponsor-grid">
+          <img src="images/sponsor1.png" alt="Sponsor 1" />
+          <img src="images/sponsor2.png" alt="Sponsor 2" />
+          <img src="images/sponsor3.png" alt="Sponsor 3" />
+        </div>
+      </section>
+      <section id="contact" data-aos="fade-left">
+        <h2>Contact</h2>
+        <p>Email: info@tinkhack.tech</p>
+        <!-- Optional: simple contact form -->
+      </section>
+      <footer>
+        <p>&copy; 2025 TinkHack | TinkerHub MEC</p>
+      </footer>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
