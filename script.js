@@ -1,19 +1,26 @@
 
 
-  // Show preloader for 3 seconds, then fade out
-  setTimeout(() => {
-    const preloader = document.getElementById("preloader");
-    preloader.style.opacity = "0";
+const btn = document.querySelector(".btn")
+
+  window.addEventListener("load", () => {
     setTimeout(() => {
-      preloader.style.display = "none";
-    }, 500);
-    const contents = document.querySelector(".contents")
-    contents.classList.add("show");
-  }, 3000);
+      const preloader = document.getElementById("preloader");
+      const contents = document.querySelector(".contents");
 
-  AOS.init({
-    duration: 1000, // animation duration in ms
-    easing: 'ease-out', // easing
-    once: true // animate only once while scrolling
+      preloader.style.opacity = "0";
+
+      setTimeout(() => {
+        preloader.style.display = "none";
+        contents.classList.add("show");
+
+        // ✅ Safe to use AOS now
+        AOS.init({
+          duration: 1000,
+          easing: "ease-out",
+          once: false
+        });
+
+        AOS.refresh();
+      }, 1000);
+    }, 3000);
   });
-
