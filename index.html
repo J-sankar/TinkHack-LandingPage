@@ -42,7 +42,23 @@
     <div class="contents">
     
       <section class="hero">
-        <div class="images-left ">
+         <section class="registration" data-aos="fade-left">
+        <button class="close-btn" onclick="hideRegistration()">&times;</button>
+        <h2>Register</h2>
+        <form id="registration-form">
+          <div>
+            <input type="text" name="name" placeholder="Name" required />
+          </div>
+          <div>
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
+          <div>
+            <input type="text" name="college" placeholder="College" required />
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+        <div class="images-left image-container ">
           <div class="profile" data-aos="fade-right" style="height: 33%; display: inline-block;width: auto;position: absolute ; top: 0;right: 0; ">
             <img src="images\images (1).jpg" width="140" height="100%" style="object-fit: cover; top: 0; right: 0;" />
           
@@ -66,8 +82,19 @@
           </div>
           
         </div>
+        <div class="registrationDetails">
+          <h2>Registration Details</h2>
+          <ul>
+            <li><strong>Eligibility:</strong> College students only</li>
+            <li><strong>Team Size:</strong> 2-4 members required</li>
+            <li><strong>Registration:</strong> Free participation</li>
+            <li><strong>Skills:</strong> Basic programming knowledge</li>
+            <li><strong>Commitment:</strong> Full event attendance</li>
+            <li><strong>Theme:</strong> AI & Generative AI projects</li>
+          </ul>
+        </div>
 
-        <div class="images-right ">
+        <div class="images-right image-container ">
           <div class="profile" data-aos="fade-left" style="height: 33%; display: inline-block;width: auto;position: absolute ; top: 0;left: 0; ">
             <img src="images\images (4).jpg" width="140" height="100%" style="object-fit: cover; top: 0; right: 0;" />
           
@@ -80,6 +107,7 @@
             <img src="images\images (6).jpg" width="140" height="100%" style="object-fit: cover; top: 0; right: 0;"  />
             
           </div>
+         
       </section>
 
       <section id="overview" data-aos="fade-left">
@@ -131,15 +159,7 @@
           <li>Winners Announced – 20th Oct</li>
         </ul> -->
       </section>
-      <section id="registration" data-aos="fade-left">
-        <h2>Register</h2>
-        <form id="registration-form">
-          <input type="text" name="name" placeholder="Name" required />
-          <input type="email" name="email" placeholder="Email" required />
-          <input type="text" name="college" placeholder="College" required />
-          <button type="submit">Submit</button>
-        </form>
-      </section>
+      
       <section id="sponsors" data-aos="fade-left">
         <h2>Sponsors</h2>
         <div class="sponsor-grid">
