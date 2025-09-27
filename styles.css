@@ -8,26 +8,29 @@
 }
 
 body {
-  background: #121212;
-  ;
+  background: #000000;
+  
   color: white;
   overflow-x: hidden
 }
 
 nav {
   display: flex;
+  position: sticky;
+  /* position: fixed; */
+  top: 0;
+  width: 100vw;
   justify-content: space-between;
   /* logo left, icons right */
   align-items: center;
-  /* vertical alignment */
+  
   height: 10vh;
-  width: 100%;
+  
   padding: 0 2rem;
-  /* space on left/right */
   background-color: #121212;
   font: weight 30px;
   ;
-  /* dark background */
+ /
 }
 
 nav .logo img {
@@ -114,10 +117,71 @@ nav .nav-icons img:hover {
   font-weight: bold;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   cursor: pointer;
-  transform: scale(1);
-  transition: transform 0.2s ease, background 0.3s ease;
+  transition: transform 0.6s ease, background 0.6s ease, opacity 1s ease-out, visibility 0.5s ease-in-out;
   /* fixed */
 
+}
+
+.registrationDetails {
+  width: 50%;
+  height: 100%;
+  background-color: #121212;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  right: -50%;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: right 0.8s ease-out, opacity 0.6s ease-out;
+}
+
+.registrationDetails h2 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 32px;
+  text-align: center;
+}
+
+.registrationDetails ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.registrationDetails li {
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 20px;
+}
+
+.registrationDetails li:last-child {
+  border-bottom: none;
+}
+
+.registrationDetails strong {
+  color: white;
+  font-weight: bold;
+}
+
+.registrationDetailsShow {
+  visibility: visible;
+  right: 25%;
+  opacity: 1;
+  transition: right 0.8s ease-out, opacity 0.6s ease-out;
 }
 
 .btn:hover {
@@ -175,8 +239,21 @@ nav .nav-icons img:hover {
   height: 100%;
   width: 30%;
   opacity: 0.5;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
 
+.image-container {
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.image-container.hide {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.image-container.moveAside {
+  transform: translateX(-150%);
+}
 
 .main-content {
   position: absolute;
@@ -190,16 +267,40 @@ nav .nav-icons img:hover {
   align-items: baseline;
   /* center text horizontally */
   gap: 10px;
-  /* space between h1s */
+  z-index: 2000;
+  /* space betwzeen h1s */
   text-align: center;
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
 }
 
 .main-content h1 {
   font-family: 'Bitcount Grid Double Ink';
   font-size: 80px;
+  transition: all 400ms ease-in-out;
+  animation: headGlow 400ms infinite alternate;
 }
 
+@keyframes headGlow {
+  0%{
+   text-shadow:0 0 5px rgb(152, 23, 141), 
+    0 0 2px rgb(157, 18, 159); 
+  }
+  50%{
+    text-shadow:0 0 5px rgb(152, 23, 141), 
+    0 0 2px rgb(152, 23, 141), 
+    0 0 4px rgb(152, 23, 141), 
+    0 0 7px rgb(152, 23, 141);
+  }
+ 100%{
+    text-shadow:0 0 5px rgb(152, 23, 141), 
+    0 0 2px rgb(152, 23, 141), 
+    0 0 4px rgb(152, 23, 141), 
+    0 0 7px rgb(152, 23, 141), 
+    0 0 px rgb(152, 23, 141);
+  }
+
+}
 #overview {
   /* background-color: rgb(37, 36, 36); */
   padding: 40px;
@@ -215,6 +316,7 @@ nav .nav-icons img:hover {
   text-align: left;
 
 }
+
 
 #overview h1 {
   font-size: 50px;
@@ -278,7 +380,10 @@ nav .nav-icons img:hover {
   z-index: 0;
   will-change: background-position;
 }
-
+h1 span {
+  all: initial;   /* resets all inherited and applied properties */
+  /* if you want to keep the parent font */
+}
 @keyframes diagonalFlow {
   0%   { background-position: 0% 0%; }
   50%  { background-position: 100% 100%; }
@@ -335,3 +440,282 @@ nav .nav-icons img:hover {
   left: 55%; /* right of the line */
   transform: translateX(10px); /* spacing from line */
 }
+
+.registration,form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 3rem;
+}
+form{
+  width: 100%;
+  height: 80%;
+}
+
+
+
+
+.registration {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30vw;
+  height: 70vh;
+  transform: translateX(120%); /* move it off-screen initially */
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+  visibility: hidden;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+}
+
+.registrationShow {
+  transform: translateX(0); /* slide into view */
+  opacity: 1;
+  visibility: visible;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+.contentAside{
+  transform: translate(-300%,-50%);
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.contentAside h1 {
+  font-size: 50px;
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+}
+
+form div {
+  width: 70%;
+  height: 10%;
+  border-radius: 8px;
+  border: none;
+  background-color: white;
+  
+}
+
+form input{
+  width: 95%;
+  height: 100%;
+  border: none;
+  font-size: 15px;
+  font-family: 'Fira Sans';
+  font-weight: 400;
+}
+
+input:focus{
+  outline: none;   /* removes the default focus outline */
+  border: none;
+}
+
+form button {
+  width: 40%;
+  height: 10%;
+  margin-bottom: 10%;
+  border-radius: 18px;
+  background-color: transparent;
+  border: 2px solid  white;
+  color: #ffffff;
+  border-top: 2px solid yellow;
+  border-bottom: 2px solid violet;
+  padding: 0;
+  font-weight: 700;
+  font-size: 15px;
+  animation: bg 3s infinite;
+
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  padding: 5px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 900px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0.5rem;
+  }
+  nav .logo img {
+    height: 40px;
+  }
+  nav .links ul {
+    gap: 18px;
+    font-size: 16px;
+  }
+  nav .nav-icons img {
+    height: 30px;
+  }
+  .hero {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 10px;
+    height: auto;
+  }
+  .images-left, .images-right {
+    width: 90vw;
+    min-width: 0;
+    height: 120px;
+    opacity: 0.7;
+  }
+  .main-content {
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100vw;
+    align-items: center;
+    gap: 5px;
+    font-size: 18px;
+    padding: 0 10px;
+  }
+  .main-content h1 {
+    font-size: 36px;
+  }
+  .btn {
+    width: 90%;
+    font-size: 18px;
+    padding: 10px 0;
+  }
+  .registration {
+    width: 90vw;
+    min-width: 0;
+    left: 5vw;
+    right: auto;
+    top: 10vh;
+    height: auto;
+    border-radius: 10px;
+    padding: 10px 0;
+  }
+  .registrationDetails {
+    width: 90vw;
+    min-width: 0;
+    left: 5vw !important;
+    right: auto !important;
+    top: 10vh;
+    height: auto;
+    border-radius: 10px;
+    padding: 10px 0;
+    font-size: 16px;
+  }
+  .registrationDetailsShow {
+    left: 5vw !important;
+    right: auto !important;
+  }
+  .registrationDetails h2 {
+    font-size: 22px;
+  }
+  .registrationDetails li {
+    font-size: 15px;
+    padding: 10px 0;
+  }
+  .close-btn {
+    right: 5px;
+    top: 5px;
+    font-size: 20px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 0.5rem 0.2rem;
+  }
+  nav .logo img {
+    height: 32px;
+  }
+  nav .links ul {
+    gap: 10px;
+    font-size: 13px;
+  }
+  nav .nav-icons img {
+    height: 22px;
+  }
+  .hero {
+    flex-direction: column;
+    padding: 0.5rem;
+    gap: 5px;
+    height: auto;
+  }
+  .images-left, .images-right {
+    width: 98vw;
+    min-width: 0;
+    height: 80px;
+    opacity: 0.8;
+  }
+  .main-content {
+    width: 100vw;
+    font-size: 14px;
+    padding: 0 2px;
+  }
+  .main-content h1 {
+    font-size: 22px;
+  }
+  .btn {
+    width: 98%;
+    font-size: 15px;
+    padding: 8px 0;
+  }
+  .registration {
+    width: 98vw;
+    left: 1vw;
+    right: auto;
+    top: 5vh;
+    height: auto;
+    border-radius: 8px;
+    padding: 5px 0;
+  }
+  .registrationDetails {
+    width: 98vw;
+    left: 1vw !important;
+    right: auto !important;
+    top: 5vh;
+    height: auto;
+    border-radius: 8px;
+    padding: 5px 0;
+    font-size: 13px;
+  }
+  .registrationDetailsShow {
+    left: 1vw !important;
+    right: auto !important;
+  }
+  .registrationDetails h2 {
+    font-size: 16px;
+  }
+  .registrationDetails li {
+    font-size: 12px;
+    padding: 7px 0;
+  }
+  .close-btn {
+    right: 2px;
+    top: 2px;
+    font-size: 16px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
