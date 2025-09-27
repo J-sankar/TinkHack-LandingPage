@@ -1,183 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  
 
-    <link rel="stylesheet" href="styles.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <title>TinkHack</title>
-  </head>
-  <body>
-    <div class="loadingscreen"></div>
-    <div id="preloader">
-      <p>TinkHack 2025</p>
-      <div class="loader"></div>
-    </div>
-  <nav>
-  <div class="logo">
-    <img src="images\TinkerHubLogo.1f901db1.png" alt="TinkHack Logo" />
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <title>TinkHack</title>
+</head>
+
+<body>
+  <div class="loadingscreen"></div>
+  <div id="preloader">
+    <p>TinkHack 2025</p>
+    <div class="loader"></div>
   </div>
-  <div class="links" >
+  <nav>
+    <div class="logo">
+      <img src="images\TinkerHubLogo.1f901db1.png" alt="TinkHack Logo" />
+    </div>
+    <div class="mobile-menu-icon" onclick="toggleMobileMenu()">
+  &#9776; <!-- hamburger icon --></div>
+</div>
+    <div class="links">
+    <button class="mobile-only close-btn" onclick="closeMobileMenu()">&times;</button>
+      <ul>
+
+        <li><a href="#overview">About</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li class="desk"><a href="#register"  id="nav-register">Register</a></li>
+        <li><a href="#sponsors">Sponsors</a></li>
+        <li><a href="#contacts">Contacts</a></li>
+      </ul>
+    </div>
+  
+  </nav>
+
+  <div class="contents">
+
+    <section class="hero">
+  <!-- Registration form -->
+  <section class="registration" data-aos="fade-left">
+    <span class="close-btn" onclick="hideRegistration()">&times;</span>
+    <h2>Register</h2>
+    <form id="registration-form">
+      <div>
+        <input type="text" id="name" name="name" placeholder="Name" />
+        <div class="error nameError"></div>
+      </div>
+      <div>
+        <input type="text" id="email" name="email" placeholder="Email" />
+        <div class="error emailError"></div>
+      </div>
+      <div>
+        <input type="text" id="college" name="college" placeholder="College" />
+        <div class="error collegeError"></div>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Desktop images -->
+  <div class="images-left image-container desktop-only">
+    <div class="profile" data-aos="fade-right"
+      style="height: 33%; display: inline-block;width: auto;position: absolute ; top: 0;right: 0;">
+      <img src="images/images (1).jpg" width="140" height="100%" style="object-fit: cover;" />
+    </div>
+    <div class="profile3" data-aos="fade-right" data-aos-delay="300"
+      style="height: 33%; display: inline-block;width: auto;position: absolute ; top: 34%;right: 33%;">
+      <img src="images/images (2).jpg" width="140" height="100%" style="object-fit: cover;" />
+    </div>
+    <div class="profile2" data-aos="fade-right" data-aos-delay="400"
+      style="height: 33%; display: inline-block;width: auto;position: absolute ; bottom: 0;right: 0;">
+      <img src="images/images (3).jpg" width="140" height="100%" style="object-fit: cover;" />
+    </div>
+  </div>
+
+  <!-- Hero text -->
+  <div class="main-content desktop-only">
+    <h1 style="text-align: center;" data-aos="zoom-in">TinkHack</h1>
+    <h1 data-aos="zoom-in" data-aos-delay="200">
+      3.0
+      <span style="background-color: gray ; font-size: small ; padding: 5px; margin-left: 5px;">
+        2 Oct - 3 Oct
+      </span>
+    </h1>
+    <div style="display:flex; justify-content:center;" data-aos="zoom-in" data-aos-delay="200">
+      <button class="btn">REGISTER HERE</button>
+    </div>
+  </div>
+
+  <!-- Registration details -->
+  <div class="registrationDetails">
+    <h2>Registration Details</h2>
     <ul>
-      <li>About</li>
-      <li>TImeline</li>
-      <li>Register</li>
-      <li>Sponsors</li>
-      <li>Contact</li>
+      <li><strong>Eligibility:</strong> Open to currently enrolled students. Valid ID may be required.</li>
+      <li><strong>Team Size:</strong> 2–4 members. Solo participation not allowed.</li>
+      <li><strong>Registration:</strong> Free, but mandatory.</li>
+      <li><strong>Skills:</strong> Basic programming; AI knowledge is a plus.</li>
+      <li><strong>Commitment:</strong> Attend entire event to avoid disqualification.</li>
+      <li><strong>Theme:</strong> Artificial Intelligence & Generative AI.</li>
     </ul>
   </div>
-  <div class="nav-icons">
-    <img src="images\instagram.svg" alt="Icon 1"  />
-    <img src="images\whatsapp.svg" alt="Icon 2" />
-  </div>
-</nav>
 
-    <div class="contents">
-    
-      <section class="hero">
-         <section class="registration" data-aos="fade-left">
-        <button class="close-btn" onclick="hideRegistration()">&times;</button>
-        <h2>Register</h2>
-        <form id="registration-form">
-          <div>
-            <input type="text" name="name" placeholder="Name" required />
-          </div>
-          <div>
-            <input type="email" name="email" placeholder="Email" required />
-          </div>
-          <div>
-            <input type="text" name="college" placeholder="College" required />
-          </div>
-          <button type="submit">Submit</button>
-        </form>
-      </section>
-        <div class="images-left image-container ">
-          <div class="profile" data-aos="fade-right" style="height: 33%; display: inline-block;width: auto;position: absolute ; top: 0;right: 0; ">
-            <img src="images\images (1).jpg" width="140" height="100%" style="object-fit: cover; top: 0; right: 0;" />
-          
-          </div>
-          <div class="profile3" data-aos="fade-right" data-aos-delay="300"style="height: 33%; display: inline-block;width: auto;position: absolute ; top: 34%;right: 33%; " >
-            <img src="images\images (2).jpg" width="140" height="100%"style="object-fit: cover; top: 0; right: 0;"  />
-            
-          </div>
-          <div class="profile2" data-aos="fade-right" data-aos-delay="400" style="height: 33%; display: inline-block;width: auto;position: absolute ; bottom: 0;right: 0; ">
-            <img src="images\images (3).jpg" width="140" height="100%" style="object-fit: cover; top: 0; right: 0;"  />
-            
-          </div>
-        </div>
-
-        <div class="main-content" >
-          <h1 style="text-align: center;" data-aos="zoom-in">TinkHack</h1>
-          <h1 data-aos="zoom-in"data-aos-delay="200">3.0<span style="background-color: gray ; font-size: small ; padding: 5PX; margin-left: 5px; font-family:'">2 Oct - 3 Oct</span></h1>
-          <div style="display:inline-block; width:100%; display:flex; align-items:start;" data-aos="zoom-in"  data-aos-delay="200">
-
-            <button class="btn" >REGISTER HERE</button>
-          </div>
-          
-        </div>
-        <div class="registrationDetails">
-          <h2>Registration Details</h2>
-          <ul>
-            <li><strong>Eligibility:</strong> College students only</li>
-            <li><strong>Team Size:</strong> 2-4 members required</li>
-            <li><strong>Registration:</strong> Free participation</li>
-            <li><strong>Skills:</strong> Basic programming knowledge</li>
-            <li><strong>Commitment:</strong> Full event attendance</li>
-            <li><strong>Theme:</strong> AI & Generative AI projects</li>
-          </ul>
-        </div>
-
-        <div class="images-right image-container ">
-          <div class="profile" data-aos="fade-left" style="height: 33%; display: inline-block;width: auto;position: absolute ; top: 0;left: 0; ">
-            <img src="images\images (4).jpg" width="140" height="100%" style="object-fit: cover; top: 0; right: 0;" />
-          
-          </div>
-          <div class="profile3" data-aos="fade-left" data-aos-delay="300" style="height: 33%; display: inline-block;width: auto;position: absolute ; top: 34%;left: 33%; " >
-            <img src="images\images (5).jpg" width="140" height="100%"style="object-fit: cover; top: 0; right: 0;"  />
-            
-          </div>
-          <div class="profile2" data-aos="fade-left" data-aos-delay="400" style="height: 33%; display: inline-block;width: auto;position: absolute ; bottom: 0;left: 0; ">
-            <img src="images\images (6).jpg" width="140" height="100%" style="object-fit: cover; top: 0; right: 0;"  />
-            
-          </div>
-         
-      </section>
-
-      <section id="overview" data-aos="fade-left">
-        <h1>Event Overview</h1>
-        <p>TinkHack, the overnight hackathon by TinkerHub MEC, is Kerala’s first AI-driven student event focused on Generative AI. It’s a playground for innovation, bringing together creative minds to experiment, collaborate, and develop solutions across technology, social impact, and more.</p>
-        <div class="features">
-          <div class="feature">
-            <img src="" alt="Workshops" />
-            <p>Workshops & Mentorship</p>
-          </div>
-          <div class="feature">
-            <img src="images/icon2.svg" alt="Prizes" />
-            <p>Exciting Prizes</p>
-          </div>
-        </div>
-      </section>
-      <section id="timeline">
-        <h1 style="padding: 30px;"data-aos="fade-left" data-aos-delay="200">Timeline</h1>
-        <div class="timeline" data-aos="fade-in" data-aos-delay="400" >
-
-          <div class="dot" style="top: 0;"></div>
-          <div class="event-left" data-aos="fade-right"data-aos-offset="200" data-aos-delay="300" data-aos-once="false" >content-1</div>
-
-
-          <div class="dot" style="top: 20%;"></div>
-          <div class="event-right"  data-aos="fade-left"data-aos-offset="200" data-aos-delay="300" style="top: 20%;">content-2</div>
-          
-          
-          <div class="dot" style="top:40%;"></div>
-          <div class="event-left" data-aos-offset="200" data-aos="fade-right"data-aos-delay="300" data-aos-once="false" style="top:40%;">content-3</div>
-          
-          
-          <div class="dot" style="top:60%;"></div>
-          <div class="event-right" data-aos="fade-left"data-aos-offset="200" data-aos-delay="300" data-aos-once="false" style="top:60%;">content-4</div>
-          
-          <div class="dot" style="top:80%;"></div>
-          <div class="event-left" data-aos="fade-right" data-aos-delay="300" data-aos-once="false"style="top:80%;">content-5</div>
-          
-          
-         
-          
-
-
-        </div>
-        <!-- <ul>
-          <li>Registration Opens – 1st Oct</li>
-          <li>Hackathon Starts – 10th Oct</li>
-          <li>Submission Deadline – 15th Oct</li>
-          <li>Winners Announced – 20th Oct</li>
-        </ul> -->
-      </section>
-      
-      <section id="sponsors" data-aos="fade-left">
-        <h2>Sponsors</h2>
-        <div class="sponsor-grid">
-          <img src="images/sponsor1.png" alt="Sponsor 1" />
-          <img src="images/sponsor2.png" alt="Sponsor 2" />
-          <img src="images/sponsor3.png" alt="Sponsor 3" />
-        </div>
-      </section>
-      <section id="contact" data-aos="fade-left">
-        <h2>Contact</h2>
-        <p>Email: info@tinkhack.tech</p>
-        <!-- Optional: simple contact form -->
-      </section>
-      <footer>
-        <p>&copy; 2025 TinkHack | TinkerHub MEC</p>
-      </footer>
+  <!-- Desktop images (right) -->
+  <div class="images-right image-container desktop-only">
+    <div class="profile" data-aos="fade-left"
+      style="height: 33%; display: inline-block;width: auto;position: absolute ; top: 0;left: 0;">
+      <img src="images/images (4).jpg" width="140" height="100%" style="object-fit: cover;" />
     </div>
+    <div class="profile3" data-aos="fade-left" data-aos-delay="300"
+      style="height: 33%; display: inline-block;width: auto;position: absolute ; top: 34%;left: 33%;">
+      <img src="images/images (5).jpg" width="140" height="100%" style="object-fit: cover;" />
+    </div>
+    <div class="profile2" data-aos="fade-left" data-aos-delay="400"
+      style="height: 33%; display: inline-block;width: auto;position: absolute ; bottom: 0;left: 0;">
+      <img src="images/images (6).jpg" width="140" height="100%" style="object-fit: cover;" />
+    </div>
+  </div>
+
+ 
+  <!-- Mobile Swiper -->
+  
+  <div class="swiper mobile-content hero-swiper mobile-only">
+  <div class="main-content-mobile">
+    <h1>TinkHack 3.0</h1>
+    <span style="background-color: gray ; font-size: small ; padding: 5px; margin-left: 5px;">
+        2 Oct - 3 Oct
+      </span>
+    <p>“Unleash your potential in a high-energy hackathon focused on innovation, technology, and AI.”</p>
+    <button class="btnMobile btn" onclick="viewRegitration">REGISTER HERE</button>
+  </div>
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="images/images (1).jpg" alt="Hero 1"></div>
+    <div class="swiper-slide"><img src="images/images (2).jpg" alt="Hero 2"></div>
+    <div class="swiper-slide"><img src="images/images (3).jpg" alt="Hero 3"></div>
+    <div class="swiper-slide"><img src="images/images (4).jpg" alt="Hero 4"></div>
+    <div class="swiper-slide"><img src="images/images (5).jpg" alt="Hero 5"></div>
+    <div class="swiper-slide"><img src="images/images (6).jpg" alt="Hero 6"></div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+</section>
+
+
+    <section id="overview" data-aos="fade-left">
+  <div style="max-width: 900px; margin: 0 auto;">
+    <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 20px;">Event Overview</h2>
+    <p style="font-size: 1.1em; margin-bottom: 15px;">
+      <strong>TinkHack 3.0</strong>, organized by <strong>TinkerHub MEC</strong>, is Kerala’s premier student hackathon focusing on <strong>Artificial Intelligence and Generative AI</strong>. This high-energy, overnight event brings together aspiring innovators, developers, and tech enthusiasts to explore cutting-edge technologies and create impactful solutions.
+    </p>
+    <p style="font-size: 1.1em; margin-bottom: 15px;">
+      Participants will collaborate in teams, engage in mentorship sessions, and tackle real-world challenges across domains such as AI, social impact, automation, and technology innovation. With workshops, guidance from industry experts, and exciting prizes, TinkHack 3.0 is the ultimate platform for students to learn, experiment, and showcase their creativity.
+    </p>
+
+    <h3 style="font-size: 1.8em; margin-top: 30px; margin-bottom: 10px;">Key Highlights:</h3>
+    <ul style="margin-left: 20px; margin-bottom: 15px;">
+      <li><strong>Workshops & Mentorship:</strong> Gain insights from experts and refine your skills.</li>
+      <li><strong>Team Collaboration:</strong> Work in teams of 2–4 to solve challenges.</li>
+      <li><strong>Exciting Prizes:</strong> Recognition and awards for innovative solutions.</li>
+      <li><strong>Theme:</strong> Focused on Generative AI and innovation, encouraging creative problem-solving.</li>
+    </ul>
+
+    <h3 style="font-size: 1.8em; margin-top: 30px; margin-bottom: 10px;">Why Attend:</h3>
+    <ul style="margin-left: 20px; margin-bottom: 15px;">
+      <li>Enhance your technical and teamwork skills.</li>
+      <li>Network with peers and industry professionals.</li>
+      <li>Experience the thrill of hacking for a cause.</li>
+      <li>Showcase your talent in a competitive yet collaborative environment.</li>
+    </ul>
+  </div>
+
+    </section>
+    <section id="timeline">
+      <h1 style="padding: 30px;" data-aos="fade-left" data-aos-delay="200">Timeline</h1>
+      <div class="timeline" data-aos="fade-in" data-aos-delay="400">
+
+        <div class="dot" style="top: 0;"></div>
+        <div class="event-left" data-aos="fade-right" data-aos-offset="200" data-aos-delay="300" data-aos-once="false">
+          content-1</div>
+
+
+        <div class="dot" style="top: 20%;"></div>
+        <div class="event-right" data-aos="fade-left" data-aos-offset="200" data-aos-delay="300" style="top: 20%;">
+          content-2</div>
+
+
+        <div class="dot" style="top:40%;"></div>
+        <div class="event-left" data-aos-offset="200" data-aos="fade-right" data-aos-delay="300" data-aos-once="false"
+          style="top:40%;">content-3</div>
+
+
+        <div class="dot" style="top:60%;"></div>
+        <div class="event-right" data-aos="fade-left" data-aos-offset="200" data-aos-delay="300" data-aos-once="false"
+          style="top:60%;">content-4</div>
+
+        <div class="dot" style="top:80%;"></div>
+        <div class="event-left" data-aos="fade-right" data-aos-delay="300" data-aos-once="false" style="top:80%;">
+          content-5</div>
+
+
+
+
+
+
+      </div>
+    </section>
+
+    <section class="sponsors" id="sponsors" data-aos="fade-left">
+      <h1>Our Sponsors</h1>
+      <div class="sponsors-container" data-aos="fade-left" data-aos-delay="300">
+        <div class="sponsor" data-aos="fade-left">
+          <img src="sponsor1.png" alt="Sponsor 1">
+        </div>
+        <div class="sponsor" data-aos="fade-left" data-aos-delay="500">
+          <img src="sponsor2.png" alt="Sponsor 2">
+        </div>
+        <div class="sponsor" data-aos="fade-left" data-aos-delay="600">
+          <img src="sponsor3.png" alt="Sponsor 3">
+        </div>
+        <div class="sponsor" data-aos="fade-left" data-aos-delay="700">
+          <img src="sponsor4.png" alt="Sponsor 4">
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts" data-aos="fade-left">
+      <div class="contact-container">
+    <h1>Contact Us</h1>
+   
+
+    <div class="contact-info">
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>123 Street, City, Country</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <p>email@example.com</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-phone"></i>
+        <p>+123 456 7890</p>
+      </div>
+      <div class="social-links">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+    </div>
+    
+    </section>
+    <footer>
+      <p>&copy; 2025 TinkHack | TinkerHub MEC</p>
+    </footer>
+
 
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>
